@@ -17,13 +17,13 @@ User stories must be accompanied by acceptance criteria. These are the condition
 >
 > *Acceptance*
 >
-> * A search field is available on the top-bar.
-> * A search is started when the user clicks Submit.
-> * The default placeholder is a grey text Type the name.
-> * The placeholder disappears when the user starts typing.
-> * The search language is English.
-> * The user can type no more than 200 symbols.
-> * It doesn’t support special symbols.  If the user has typed a special symbol in the search input, it displays the warning massage: *Search input cannot contain special symbols.*
+> * Should have a search field is available on the top-bar.
+> * Should start search when the user clicks Submit.
+> * Should have default placeholder is a grey text Type the name.
+> * Should clear placeholder text when the user starts typing.
+> * Should use English as search language.
+> * Should limit user from typing no more than 200 symbols.
+> * Should not support special symbols.  If the user has typed a special symbol in the search input, it displays the warning massage: *Search input cannot contain special symbols.*
 
 All user stories must fit the **INVEST quality model**:
 
@@ -101,6 +101,15 @@ AC can be written in different formats. There are two most common ones, and the 
   * Usually, criteria composed using this form look like a simple bullet list
 * custom formats
   * Most user stories can be covered with two formats mentioned above. However, you can invent your own acceptance criteria given they serve their purposes, are written clearly in plain English, and can’t be misinterpreted. Some teams even use plain text.
+
+## 7 Tips for Writing Acceptance Criteria:
+* Each product backlog item or user story should have at least one acceptance criteria. Hey, don’t take writing acceptance criteria lightly or think of skipping it.
+* Acceptance Criteria is written before implementation – this is obvious yet frequently missed by teams. Write acceptance criteria after the implementation and miss the benefits.
+* Each acceptance criterion is independently testable. Why shouldn’t it be?
+* Acceptance criteria must have a clear Pass / Fail result. Write complex and long sentences at your own risk.
+* It focuses on the end result – What. Not the solution approach – How.
+* Include functional as well as non-functional criteria – when relevant.
+* Team members write acceptance criteria and the Product Owner verifies it. It confirms the PO and the team have shared understanding of the user story.
 
 ## Examples
 
@@ -190,3 +199,10 @@ Data of this table comes from OA table Contractor.
 | Name          | nvarchar(60), null |
 ​
 Data of this table comes from OA table Salesperson.
+
+## Blatently plagarized sources
+* https://www.agileconnection.com/article/user-story-heuristics-understanding-agile-requirements#:~:text=People%20call%20user%20stories%20a,for%20work%20to%20be%20done.
+* https://www.mountaingoatsoftware.com/agile/user-stories#:~:text=What%20is%20a%20user%20story,so%20that%20.
+* https://www.altexsoft.com/blog/business/functional-and-non-functional-requirements-specification-and-types/
+altexsoft.com/blog/business/acceptance-criteria-purposes-formats-and-best-practices/
+* https://agileforgrowth.com/blog/acceptance-criteria-checklist/
