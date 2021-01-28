@@ -66,3 +66,16 @@ Response status codes beginning with the digit "5" indicate cases in which the s
 |---|---|---|---|
 | 500 | InternalServerError | The server encountered an unexpected condition which prevented it from fulfilling the request. |
 | 503 | ServiceUnavailable | The server is currently unable to handle the request due to a temporary overloading or maintenance of the server. The implication is that this is a temporary condition which will be alleviated after some delay. If known, the length of the delay MAY be indicated in a Retry-After header. If no Retry-After is given, the client SHOULD handle the response as it would for a 500 response. |
+
+
+
+
+
+## Notes to be incorporated:
+```
+Cort [3:54 PM]
+imagine a scenario where you have to cancel an order where when you cancel you have to supply a reason.  The reasons are associated with "permissions" and a user must have that permission in order to be able to use that reason when cancelling.  If a user were to choose a reason they have permission for the operation would succeed.  If they do not, the operation would return an http 4.....what?  403?
+
+Steve [3:55 PM]
+400 bad request
+```

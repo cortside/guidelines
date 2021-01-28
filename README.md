@@ -5,4 +5,5 @@ Scrum
 
 REST
 * [RESTful Apis](rest/README.md)
-* [HTTP Status Codes](rest/http-status-codes.md)
+* [HTTP Status Codes](rest/HTTP-STATUS-CODES.md)
+* [health endpoints.md](rest/health-endpoint.md)
