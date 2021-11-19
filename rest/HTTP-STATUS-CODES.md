@@ -36,7 +36,7 @@ The 4xx class of status code is intended for cases in which the client seems to 
 |---|---|---|---|
 | 400 | Bad Request | The request could not be understood by the server due to malformed syntax. The client SHOULD NOT repeat the request without modifications. | Generic error response to `POST`, `PUT`, `PATCH`, `DELETE` requests.  This would be correct response for when attempting to create a new entity that has an existence check.
 | 401 | Unauthorized | The request requires user authentication. The response MUST include a WWW-Authenticate header field (section 14.47) containing a challenge applicable to the requested resource. The client MAY repeat the request with a suitable Authorization header field (section 14.8). If the request already included Authorization credentials, then the 401 response indicates that authorization has been refused for those credentials. If the 401 response contains the same challenge as the prior response, and the user agent has already attempted authentication at least once, then the user SHOULD be presented the entity that was given in the response, since that entity might include relevant diagnostic information. HTTP access authentication is explained in "HTTP Authentication: Basic and Digest Access Authentication" [43]. | Request failed because user is not authenticated |
-| 403 | Forbidden | The server understood the request, but is refusing to fulfill it. Authorization will not help and the request SHOULD NOT be repeated. If the request method was not HEAD and the server wishes to make public why the request has not been fulfilled, it SHOULD describe the reason for the refusal in the entity. If the server does not wish to make this information available to the client, the status code 404 (Not Found) can be used instead. | Request failed because user does not have authorization to access a specific resource |
+| 403 | Forbidden | The server understood the request, but is refusing to fulfill it. Authorization will not help and the request SHOULD NOT be repeated. If the request method was not HEAD and the server wishes to make public why the request has not been fulfilled, it SHOULD describe the reason for the refusal in the entity. If the server does not wish to make this information available to the client, the status code 404 (Not Found) can be used instead. | Request failed because user does not have authorization to access a specific resource or operate on resource in a manner that caller is authorized to. |
 | 404 | Not Found | The server has not found anything matching the Request-URI. No indication is given of whether the condition is temporary or permanent. The 410 (Gone) status code SHOULD be used if the server knows, through some internally configurable mechanism, that an old resource is permanently unavailable and has no forwarding address. This status code is commonly used when the server does not wish to reveal exactly why the request has been refused, or when no other response is applicable. | Requesting for a resource that does not exist.  A resource does not exist if any part of it does not exist.  For example, if order 1 does not exist, this resource must return 404: /orders/1/items |
 | 412 | Precondition Failed | The precondition given in one or more of the request-header fields evaluated to false when it was tested on the server. This response code allows the client to place preconditions on the current resource metainformation (header field data) and thus prevent the requested method from being applied to a resource other than the one intended. | This response happens when condition defined by headers such as `If-Matched` is not fulfilled.
 | 415 | Unsupported Media Type | The origin server is refusing to service the request because the payload is in a format not supported by this method on the target resource. | The format problem might be due to the request's indicated `Content-Type` or `Content-Encoding`, or as a result of inspecting the data directly.
@@ -62,20 +62,7 @@ Each error has a `type` and a `message`, where `type` is the error type, and `me
 
 Response status codes beginning with the digit "5" indicate cases in which the server is aware that it has erred or is incapable of performing the request. Except when responding to a HEAD request, the server SHOULD include an entity containing an explanation of the error situation, and whether it is a temporary or permanent condition. User agents SHOULD display any included entity to the user. These response codes are applicable to any request method.
 
-| Code | Name | Description |
+| Code | Name | Description | Use Notes |
 |---|---|---|---|
-| 500 | InternalServerError | The server encountered an unexpected condition which prevented it from fulfilling the request. |
-| 503 | ServiceUnavailable | The server is currently unable to handle the request due to a temporary overloading or maintenance of the server. The implication is that this is a temporary condition which will be alleviated after some delay. If known, the length of the delay MAY be indicated in a Retry-After header. If no Retry-After is given, the client SHOULD handle the response as it would for a 500 response. |
-
-
-
-
-
-## Notes to be incorporated:
-```
-Cort [3:54 PM]
-imagine a scenario where you have to cancel an order where when you cancel you have to supply a reason.  The reasons are associated with "permissions" and a user must have that permission in order to be able to use that reason when cancelling.  If a user were to choose a reason they have permission for the operation would succeed.  If they do not, the operation would return an http 4.....what?  403?
-
-Steve [3:55 PM]
-400 bad request
-```
+| 500 | InternalServerError | The server encountered an unexpected condition which prevented it from fulfilling the request. | |
+| 503 | ServiceUnavailable | The server is currently unable to handle the request due to a temporary overloading or maintenance of the server. The implication is that this is a temporary condition which will be alleviated after some delay. If known, the length of the delay MAY be indicated in a Retry-After header. If no Retry-After is given, the client SHOULD handle the response as it would for a 500 response. | |
