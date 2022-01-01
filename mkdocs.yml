@@ -1,6 +1,7 @@
 site_name: Cortside Guidelines
 site_description: General guidelines by Cortside
 site_url: https://www.cortside.com
+docs_dir: ./
 
 repo_url: https://github.com/cortside/guidelines
 edit_uri: ""
