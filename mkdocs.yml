@@ -1,0 +1,18 @@
+site_name: Cortside Guidelines
+site_description: General guidelines by Cortside
+site_url: https://www.cortside.com
+
+repo_url: https://github.com/cortside/guidelines
+edit_uri: edit/develop/docs
+
+theme: readthedocs
+
+nav:
+- Scrum:
+    - User Stories: 'scrum/user-stories.md'
+- Rest:
+    - Http Status Codes: 'rest/HTTP-STATUS-CODES.md'
+    - Health status: 'rest/health-endpoint.md'
+
+# ci for docs
+# https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/
