@@ -3,6 +3,7 @@ site_description: General guidelines by Cortside
 site_url: https://www.cortside.com
 
 repo_url: https://github.com/cortside/guidelines
+edit_uri: edit/develop/docs
 
 theme: readthedocs
 
