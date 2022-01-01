@@ -14,3 +14,6 @@ nav:
 - Rest:
     - Http Status Codes: 'rest/HTTP-STATUS-CODES.md'
     - Health status: 'rest/health-endpoint.md'
+
+# ci for docs
+# https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/
