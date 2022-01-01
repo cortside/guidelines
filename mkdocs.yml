@@ -1,0 +1,10 @@
+site_name: Cortside Guidelines
+theme: readthedocs
+docs_dir: ./
+
+pages:
+- Scrum:
+    - User Stories: 'scrum/user-stories.md'
+- Rest:
+    - Http Status Codes: 'rest/HTTP-STATUS-CODES.md'
+    - Health status: 'rest/health-endpoint.md'
