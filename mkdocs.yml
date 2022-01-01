@@ -1,8 +1,7 @@
 site_name: Cortside Guidelines
 theme: readthedocs
-docs_dir: ./
 
-pages:
+nav:
 - Scrum:
     - User Stories: 'scrum/user-stories.md'
 - Rest:
