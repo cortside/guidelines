@@ -7,9 +7,14 @@ edit_uri: edit/develop/docs
 
 theme: readthedocs
 
+# Build PDF & ePub
+formats:
+  - epub
+  - pdf
+ 
 nav:
 - Scrum:
-    - User Stories: 'scrum/user-stories.md'
+    - User Stories: 'scrum/README.md'
 - Rest:
     - Http Status Codes: 'rest/HTTP-STATUS-CODES.md'
     - Health status: 'rest/health-endpoint.md'
