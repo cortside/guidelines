@@ -13,11 +13,11 @@ formats:
   - pdf
  
 nav:
-- Architecture: doc/architecture/README.md
-- C#: docs/csharp/README.md
-- Scrum: docs/scrum/README.md
-- RESTful API Design: docs/rest/README.md
-- Template projects: docs/webapistarter/README.md
+- Architecture: architecture/README.md
+- C#: csharp/README.md
+- Scrum: scrum/README.md
+- RESTful API Design: rest/README.md
+- Template projects: webapistarter/README.md
 
 # ci for docs
 # https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/
