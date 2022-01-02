@@ -13,11 +13,11 @@ formats:
   - pdf
  
 nav:
-- Scrum:
-    - User Stories: 'scrum/README.md'
-- Rest:
-    - Http Status Codes: 'rest/HTTP-STATUS-CODES.md'
-    - Health status: 'rest/health-endpoint.md'
+- Architecture: doc/architecture/README.md
+- C#: docs/csharp/README.md
+- Scrum: docs/scrum/README.md
+- RESTful API Design: docs/rest/README.md
+- Template projects: docs/webapistarter/README.md
 
 # ci for docs
 # https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/
