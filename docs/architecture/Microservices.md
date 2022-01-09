@@ -3,28 +3,29 @@
 Microservices is an acrchitecutre that allows for an enterprise application or system to be broken up in to smaller logical or contextual components.  These smaller components are called services.
 
 ![Microservices Architecture](images/Microservice_Architecture.png)
+
 (<https://microservices.io/patterns/microservices.html>)
 
-TODO: update this with transparent background, add event/message relationships
+TODO: add event/message relationships
 
-## Advantages
-
-* Allows larger number of software engineers or teams to participate in developing the overall enterprise system.
-* Breaks parts system components into smaller parts that can be more easily understood on their own.
-* Supports ability for continuous integration and continuous deployment.
-* Can allow for varying parts of the systems to scale at different rates that others.
-* Can allow for components to vary by technology as needed or makes most sense for a given context.
-  * This also means that services can be based on varying versions of an implementation framework without having to incur a synchronous cost to updating all components at the same time.
-
-## Disadvantages
-
-* Addition complexity of creating a distributed system.
-* Distributed transactions.
-* Must implement the inter-service communication mechanism and deal with service availability and partial failures.
-* Additional effort in handling service requests that may span multiple services.
-* Testing of the interactions between services across the system.
-* Required coordination between multiple teams for operations that will span multiple services.
-* Complexity of deployment, management and monitoring of system.
+> ## Advantages
+> 
+> * Allows larger number of software engineers or teams to participate in developing the overall enterprise system.
+> * Breaks parts system components into smaller parts that can be more easily understood on their own.
+> * Supports ability for continuous integration and continuous deployment.
+> * Can allow for varying parts of the systems to scale at different rates that others.
+> * Can allow for components to vary by technology as needed or makes most sense for a given context.
+>   * This also means that services can be based on varying versions of an implementation framework without having to incur a synchronous cost to updating all components at the same time.
+> 
+> ## Disadvantages
+> 
+> * Addition complexity of creating a distributed system.
+> * Distributed transactions.
+> * Must implement the inter-service communication mechanism and deal with service availability and partial failures.
+> * Additional effort in handling service requests that may span multiple services.
+> * Testing of the interactions between services across the system.
+> * Required coordination between multiple teams for operations that will span multiple services.
+> * Complexity of deployment, management and monitoring of system.
 
 ## System decomposition into services
 
