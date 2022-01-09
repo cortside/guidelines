@@ -13,3 +13,9 @@ I took help, validated my thoughts and borrowed from the work of others:
 <https://smartbear.com/solutions/microservices/>
 
 <https://aws.amazon.com/microservices/>
+
+<https://microservices.io/patterns/data/saga.html>
+
+<https://microservices.io/patterns/data/transactional-outbox.html>
+
+<https://docs.microsoft.com/en-us/dotnet/architecture/microservices/architect-microservice-container-applications/asynchronous-message-based-communication>
