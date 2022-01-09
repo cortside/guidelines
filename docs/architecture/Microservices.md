@@ -1,6 +1,6 @@
 # Microservices
 
-Microservices is an acrchitecutre that allows for an enterprise application or system to be broken up in to smaller logical or contextual components.  These smaller components are called services.
+Microservices is an architecture that allows for an enterprise application or system to be broken up in to smaller logical or contextual components.  These smaller components are called services.
 
 ![Microservices Architecture](images/Microservice_Architecture.png)
 
@@ -29,16 +29,16 @@ TODO: add event/message relationships
 
 ## System decomposition into services
 
-Decomposition of the The enterprise system into services should have an objective of smaller set of responsibilities with a mindset of a single responsiblity (the Single Responsibility Pattern for classes aptly apply to services as well).  The enterprise system can be decomposed into service by means of several methods:
+Decomposition of the The enterprise system into services should have an objective of smaller set of responsibilities with a mindset of a single responsibility (the Single Responsibility Pattern for classes aptly apply to services as well).  The enterprise system can be decomposed into service by means of several methods:
 
 * Business capability
 * Domain-driven design subdomain
-* Verb or use case based on a particular action (i.e. communication service that is responsible for sending and forwarding communications via supported methods (sms, email, slack, mail print))
+* Verb or use case based on a particular action (i.e. communication service that is responsible for sending and forwarding communications via supported methods (SMS, email, slack, mail print))
 * Noun or specific resource, where service is responsible for all actions on given set of entities or resources (i.e. user service that is responsible for user management)
 
-## Data consistency and transactionality
+## Data consistency and transactions
 
-Services should be loosely coupled and each service should have it's own database (Database per Service Pattern).  Given that any operation might require calls to multiple services, a transaction (2 phased-commit or distributed) is not generally an option or desirable.  To handle ensuring data consistency, services can publish events (Saga Pattern) when data state needs to change or to complete an operation.  Other services can consume these events, bringing all data into an eventual consistent state.  Using this kind of pattern also allows for a high level of resilience as unavaialble services can pick up events (messages) to being data into consistency when service is again available.
+Services should be loosely coupled and each service should have it's own database (Database per Service Pattern).  Given that any operation might require calls to multiple services, a transaction (2 phased-commit or distributed) is not generally an option or desirable.  To handle ensuring data consistency, services can publish events (Saga Pattern) when data state needs to change or to complete an operation.  Other services can consume these events, bringing all data into an eventual consistent state.  Using this kind of pattern also allows for a high level of resilience as unavailable services can pick up events (messages) to being data into consistency when service is again available.
 
 ## Inter-Service Communication
 
@@ -46,7 +46,7 @@ There are two basic messaging patterns that services can use to communicate with
 
 ### Synchronous communication
 
-This is where a service can call another service via HTTP requests/respsonses.  This option is a synchronous messaging pattern because the caller waits for a response from the receiver.  While other synchrounous communication methods are available, for my purposes this is always HTTP.
+This is where a service can call another service via HTTP requests/responses.  This option is a synchronous messaging pattern because the caller waits for a response from the receiver.  While other synchronous communication methods are available, for my purposes this is always HTTP.
 
 > #### Advantages
 > 
@@ -60,7 +60,7 @@ This is where a service can call another service via HTTP requests/respsonses.  
 > * Tighter service coupling
 > * Possible multiple requests for multiple interested services
 
-Syncronous communication should generally be avoided in handling of incoming HTTP requests unless caller needs to know the disposition of the operation or needs information as a result of the operation completing.
+Synchronous communication should generally be avoided in handling of incoming HTTP requests unless caller needs to know the disposition of the operation or needs information as a result of the operation completing.
 
 ### Asynchronous messaging
 
@@ -69,7 +69,7 @@ This is where a service will publish an AMQP message without waiting for a respo
 > #### Advantages
 > 
 > * Expected eventual consistency and handling.
-> * Simplier scenario for handling retries and service outages.
+> * Simpler scenario for handling retries and service outages.
 > * Looser service coupling, publisher does not know if or how many consumers there are, nor knows about their intent of consuming the message.
 > * Resilience of handling, consumer can consume when service is available and service can be scaled to expedite consumption backlog
 > * Initial request responsiveness, by means of not having the caller wait for all parts of the operation to complete.
@@ -80,4 +80,4 @@ This is where a service will publish an AMQP message without waiting for a respo
 > * Throughput can be the cost of resilience.  
 > * Queued workload may cause delays to current workloads.
 
-Asynchronous messaging should be used for as many service to service communications as possible, especially to 3rd party services beyond the control of the enterprise system.
+Asynchronous messaging should be used for as many service to service communications as possible, especially when involving 3rd party services beyond the control of the enterprise system.
