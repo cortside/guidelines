@@ -19,3 +19,11 @@ I took help, validated my thoughts and borrowed from the work of others:
 <https://microservices.io/patterns/data/transactional-outbox.html>
 
 <https://docs.microsoft.com/en-us/dotnet/architecture/microservices/architect-microservice-container-applications/asynchronous-message-based-communication>
+
+<https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design>
+
+<https://blog.stoplight.io/rest-api-standards-do-they-even-exist>
+
+<https://martinfowler.com/articles/richardsonMaturityModel.html>
+
+<https://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven>

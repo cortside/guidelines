@@ -8,7 +8,6 @@ The purpose of this document is to provide direction for keeping REST API implem
 ## Contents
 
 * [TL;DR Best Practices](BestPractices.md)
-* [Richardson Maturity Model](RichardsonMaturityModel.md)
 * [Resource](Resource.md)
 * [Representation](Representation.md)
 * [Error](Error.md)
