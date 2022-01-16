@@ -17,7 +17,10 @@ nav:
 - C#: csharp/README.md
 - Scrum: scrum/README.md
 - RESTful API Design: rest/README.md
-- Template projects: webapistarter/README.md
+- Template projects: template/README.md
 
 # ci for docs
 # https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/
+
+# PDF for mkdocs
+# https://github.com/orzih/mkdocs-with-pdf
