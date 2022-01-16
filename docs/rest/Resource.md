@@ -51,7 +51,7 @@ Because orders for users A and B are different, these collections should have di
 In data models with nested parent/child resource relationships, paths
 may become deeply nested, e.g.:
 
-```javascript
+```json
 /users/{userId}/orders/{orderId}/shipments/{shipmentId}
 ```
 
@@ -59,7 +59,7 @@ Limit nesting depth by preferring to locate resources at the root
 path. Use nesting to indicate scoped collections. For example, for the
 case above where shipping belongs to an offer:
 
-```javascript
+```text
 /users/{userId}
 /users/{userId}/orders
 /orders/{orderId}
@@ -73,13 +73,13 @@ To prevent unexpected breaking changes to users, all resources should be version
 
 Versioning should be handled via the resource name (URI).  This supports easier discovery via browser and simpler support for caching.
 
-```
+```text
 https://www.acme.com/api/v1/products
 ```
 
-## Varied data formats (representations)
+## Varied data shapes (representations)
 
-If you need different representations of the same object, construct different resource names to distinguish difference.
+If you need different data shapes (representations) of the same object, construct different resource names to distinguish difference.
 
 To get only public data use:
 ```
@@ -88,12 +88,14 @@ GET /orders
 To get order information that is specific to merchants:
 ```
 GET /merchantorders
-GET /merchant/orders
+GET /merchant/orders <-- TODO: find good real world example
 ```
 To get orders that are in the process of being fulfilled:
 ```
 GET /openorders
 ```
+
+TODO: add examples of differing representations of the above
 
 ## Use HTTP methods to operate on collections and entities
 
@@ -192,7 +194,7 @@ Sample response:
 Sample request:
 
 ```bash
-curl https://www.acme.com/api/v1/users/{id}
+curl https://www.acme.com/api/v1/users/01234567-89ab-cdef-0123-456789abcdef
 ```
 
 Sample response:

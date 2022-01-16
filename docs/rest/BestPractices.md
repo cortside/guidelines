@@ -2,25 +2,6 @@
 
 Quick list of best practices
 
-- [Best Practices](#best-practices)
-  - [RESTful urls and actions](#restful-urls-and-actions)
-    - [HTTP Methods](#http-methods)
-    - [Resource Names](#resource-names)
-  - [JSON responses](#json-responses)
-    - [Property naming conventions](#property-naming-conventions)
-    - [Pretty print by default & ensure gzip is supported](#pretty-print-by-default--ensure-gzip-is-supported)
-  - [HTTP Statuses](#http-statuses)
-  - [Updates and creation should return a resource representation](#updates-and-creation-should-return-a-resource-representation)
-  - [Versioning](#versioning)
-  - [Result filtering, sorting & searching](#result-filtering-sorting--searching)
-    - [Filtering](#filtering)
-    - [Sorting](#sorting)
-    - [Searching](#searching)
-    - [Aliases for common queries](#aliases-for-common-queries)
-  - [Documentation](#documentation)
-  - [Caching](#caching)
-  - [Errors](#errors)
-
 ## RESTful urls and actions
 
 The key principles of REST involve separating your API into logical resources. These resources are manipulated using HTTP requests where the method has specific meaning.
@@ -96,10 +77,12 @@ Use a unique query parameter for each property that implements filtering. For ex
 
 ### Sorting
 
-Similar to filtering, a generic parameter sort can be used to describe sorting rules. Accommodate complex sorting requirements by letting the sort parameter take in list of comma separated fields, each with a possible unary negative to imply descending sort order. For example:
+Similar to filtering, a sort query parameter can be used to denote how to sort the results. Multiple sorting arguments can be handled by letting the sort parameter take in list of comma separated fields.  Prefix each sorting argument with a negative to denote descending sort order.
 
-GET /tickets?sort=-priority - Retrieves a list of tickets in descending order of priority
-GET /tickets?sort=-priority,createdDate - Retrieves a list of tickets in descending order of priority. Within a specific priority, older tickets are ordered first
+For example:
+
+* GET /tickets?sort=-priority - Retrieves a list of tickets in descending order of priority
+* GET /tickets?sort=-priority,createdDate - Retrieves a list of tickets in descending order of priority. Within a specific priority, older tickets are ordered first
 
 ### Searching
 
