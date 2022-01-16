@@ -84,16 +84,6 @@ For example:
 * GET /tickets?sort=-priority - Retrieves a list of tickets in descending order of priority
 * GET /tickets?sort=-priority,createdDate - Retrieves a list of tickets in descending order of priority. Within a specific priority, older tickets are ordered first
 
-### Searching
-
-Sometimes basic filters aren't enough and you need the power of full text search. Perhaps you're already using ElasticSearch or another Lucene based search technology. When full text search is used as a mechanism of retrieving resource instances for a specific type of resource, it can be exposed on the API as a query parameter on the resource's endpoint. Let's say q. Search queries should be passed straight to the search engine and API output should be in the same format as a normal list result.
-
-Combining these together, we can build queries like:
-
-GET /tickets?sort=-updated_at - Retrieve recently updated tickets
-GET /tickets?state=closed&sort=-updated_at - Retrieve recently closed tickets
-GET /tickets?q=return&state=open&sort=-priority,created_at - Retrieve the highest priority open tickets mentioning the word 'return'
-
 ### Aliases for common queries
 
 To simplify common searches, an alias endpoint can be created.  For example, the recently closed tickets query above could be packaged up as GET /tickets/recentlyclosed
