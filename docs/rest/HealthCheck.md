@@ -1,6 +1,6 @@
 # Health Check
 
-- [Rfc health check response draft](https://inadarei.github.io/rfc-healthcheck)
+- [RFC health check response draft](https://inadarei.github.io/rfc-healthcheck)
 
 ## Cache
 
