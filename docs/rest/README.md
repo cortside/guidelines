@@ -16,7 +16,11 @@ The purpose of this document is to provide direction for keeping REST API implem
 
 ## TODO
 
+* [Caching](Cachable.md)
+* [Concurrency](Concurrency.md)
+* [Contraints](Constraints.md)
 * [HTTP Methods](HTTPMethods.md)
+* [Localization](Localization.md)
 * [Documentation](#documentation)
 * [Glossary](Glossary.md)
 * [HATEOAS](Hateoas.md)
@@ -25,5 +29,9 @@ The purpose of this document is to provide direction for keeping REST API implem
 * [OpenAPI](OpenAPI.md)
 * [Http Status Codes](HTTP-STATUS-CODES.md)
 * [Query-by-POST](Query-by-POST.md)
-  
+* [Search](Search.md)
+* [Serialization](Serialization.md)
+* [Versioning](Versioning.md)
+* [Validation](Validate-dryrun.md)
+* [Granularity](Granularity.md)
 * [References](References.md)
