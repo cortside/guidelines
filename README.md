@@ -1,9 +1,9 @@
-# guidelines
+# Cortside Guidelines
 
-Scrum
-* [User Stories](scrum/user-stories.md)
+* [Architecture](docs/architecture/README.md)
+* [C#](docs/csharp/README.md)
+* [Scrum](docs/scrum/README.md)
+* [RESTful API](docs/rest/README.md)
+* [Template projects](docs/template/README.md)
 
-REST
-* [RESTful Apis](rest/README.md)
-* [HTTP Status Codes](rest/HTTP-STATUS-CODES.md)
-* [health endpoints.md](rest/health-endpoint.md)
+Guidelines can also be found on [readthedocs.io](https://cortside-guidelines.readthedocs.io/en/latest/).
