@@ -2,7 +2,7 @@
 
 Token exchange ([RFC 8693](https://datatracker.ietf.org/doc/html/rfc8693)) is the process for translating between differing token type.  While there are possible other uses, impersonation and delegation are most common.
 
-![Token Exchange](images/../../architecture/images/token_exchange.png)
+![Token Exchange](images/token_exchange.png)
 
 (<https://docs.duendesoftware.com/identityserver/v5/tokens/extension_grants/token_exchange/>)
 

@@ -10,13 +10,17 @@ The purpose of this document is to provide direction for keeping REST API implem
 * [TL;DR Best Practices](BestPractices.md)
 * [Resource](Resource.md)
 * [Representation](Representation.md)
-* [Error](Error.md)
+* [Errors](Errors.md)
+* [HTTP Status Codes](HTTPStatusCodes.md)
+* [Health Check](HealthCheck.md)
+
+## TODO
+
+* [HTTP Methods](HTTPMethods.md)
 * [Documentation](#documentation)
 * [Glossary](Glossary.md)
 * [HATEOAS](Hateoas.md)
 * [Date handling](DateTime.md)
-* [Health status](health-endpoint.md)
-* [Impersonation/Delegation](Impersonation.md)
 * [Logging](Logging.md)
 * [OpenAPI](OpenAPI.md)
 * [Http Status Codes](HTTP-STATUS-CODES.md)

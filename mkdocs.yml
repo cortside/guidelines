@@ -14,10 +14,11 @@ formats:
  
 nav:
 - Architecture: architecture/README.md
-- C#: csharp/README.md
-- Scrum: scrum/README.md
 - RESTful API Design: rest/README.md
+- C#: csharp/README.md
+- SQL: sql/README.md
 - Template projects: template/README.md
+- Scrum: scrum/README.md
 
 # ci for docs
 # https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/
