@@ -4,6 +4,7 @@
 * [RESTful API](docs/rest/README.md)
 * [C#](docs/csharp/README.md)
 * [SQL](docs/sql/README.md)
+* [Git](docs/git/README.md)
 * [Template projects](docs/template/README.md)
 * [Scrum](docs/scrum/README.md)
 
