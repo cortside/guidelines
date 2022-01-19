@@ -13,3 +13,4 @@ Things to do:
   DON'T DO
 
   ![DON'T DO](images/git-commit-dont-do.png)
+  
