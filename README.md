@@ -1,5 +1,10 @@
 # Cortside Guidelines
 
+_The First Book of Cort_
+
+This is a collection of guidelines that have been put together to be able to set expectations and create a common language framework.
+
+
 * [Architecture](docs/architecture/README.md)
 * [RESTful API](docs/rest/README.md)
 * [C#](docs/csharp/README.md)
