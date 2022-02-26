@@ -51,7 +51,7 @@ Because orders for users A and B are different, these collections should have di
 In data models with nested parent/child resource relationships, paths
 may become deeply nested, e.g.:
 
-```json
+```text
 /users/{userId}/orders/{orderId}/shipments/{shipmentId}
 ```
 
