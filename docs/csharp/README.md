@@ -1,5 +1,7 @@
 # CSharp
 
+* [Coding Standards](CodingStandards.md)
+
 ## TODO
 
 * [Solution setup](SolutionSetup.md)
