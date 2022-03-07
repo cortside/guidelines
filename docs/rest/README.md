@@ -19,7 +19,7 @@ The purpose of this document is to provide direction for keeping REST API implem
 
 * [Caching](Cachable.md)
 * [Concurrency](Concurrency.md)
-* [Contraints](Constraints.md)
+* [Constraints](Constraints.md)
 * [HTTP Methods](HTTPMethods.md)
 * [Localization](Localization.md)
 * [Documentation](#documentation)

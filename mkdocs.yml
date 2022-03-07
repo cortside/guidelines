@@ -5,8 +5,45 @@ site_author: Cort Schaefer
 repo_url: https://github.com/cortside/guidelines
 edit_uri: edit/develop/docs
 
-theme: material
+#theme: material
 #theme: readthedocs
+theme:
+  name: material
+  custom_dir: material
+
+  # Static files
+  static_templates:
+    - 404.html
+
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+  features:
+    # - navigation.instant
+    - navigation.sections
+    - navigation.tabs
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: red
+      accent: red
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png
+  icon:
+    logo: logo
 
 nav:
   - 'Architecture':
@@ -35,7 +72,21 @@ nav:
 # ci for docs
 # https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/
 
+#extra_css:
+#    - css/extra.css
+
 plugins:
+    - search
+    - minify:
+        minify_html: true
+#    - extra-sass    
+#    -  pdf-export:
+#        combined: true
+#        combined_output_path: combined.pdf
+#    - mkpdfs:
+#        company: The War Company Inc.
+#        author: Monsieur Silvestre
+#        toc_title: ToC
     - with-pdf:
         #author: Cort Schaefer
         copyright: Copyright (c) 2022 Cortside Consulting and Contributors
@@ -65,9 +116,9 @@ plugins:
         #two_columns_level: 3
         #
         #render_js: true
-        #headless_chrome_path: headless-chromium
+        #headless_chrome_path: google-chrome
         #
-        output_path: guidelines.pdf
+        output_path: ../guidelines.pdf
         #enabled_if_env: ENABLE_PDF_EXPORT
         #
         #debug_html: true
@@ -75,8 +126,7 @@ plugins:
         #verbose: true
 
 markdown_extensions:
-  - toc
-  - extra
+#   - extra
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - toc:

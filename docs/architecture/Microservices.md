@@ -1,6 +1,6 @@
 # Microservices
 
-Microservices is an architecture that allows for an enterprise application or system to be broken up in to smaller logical or contextual components.  These smaller components are called services.
+Microservices is an architecture that allows for an enterprise application or system to be broken up into smaller logical or contextual components.  These smaller components are called services.
 
 ![Microservices Architecture](images/Microservice_Architecture.png)
 
@@ -8,24 +8,24 @@ Microservices is an architecture that allows for an enterprise application or sy
 
 TODO: add event/message relationships
 
-> ## Advantages
-> 
-> * Allows larger number of software engineers or teams to participate in developing the overall enterprise system.
-> * Breaks parts system components into smaller parts that can be more easily understood on their own.
-> * Supports ability for continuous integration and continuous deployment.
-> * Can allow for varying parts of the systems to scale at different rates that others.
-> * Can allow for components to vary by technology as needed or makes most sense for a given context.
->   * This also means that services can be based on varying versions of an implementation framework without having to incur a synchronous cost to updating all components at the same time.
-> 
-> ## Disadvantages
-> 
-> * Addition complexity of creating a distributed system.
-> * Distributed transactions.
-> * Must implement the inter-service communication mechanism and deal with service availability and partial failures.
-> * Additional effort in handling service requests that may span multiple services.
-> * Testing of the interactions between services across the system.
-> * Required coordination between multiple teams for operations that will span multiple services.
-> * Complexity of deployment, management and monitoring of system.
+## Advantages
+
+* Allows larger number of software engineers or teams to participate in developing the overall enterprise system.
+* Breaks parts system components into smaller parts that can be more easily understood on their own.
+* Supports ability for continuous integration and continuous deployment.
+* Can allow for varying parts of the systems to scale at different rates that others.
+* Can allow for components to vary by technology as needed or makes most sense for a given context.
+    * This also means that services can be based on varying versions of an implementation framework without having to incur a synchronous cost to updating all components at the same time.
+
+## Disadvantages
+
+* Addition complexity of creating a distributed system.
+* Distributed transactions.
+* Must implement the inter-service communication mechanism and deal with service availability and partial failures.
+* Additional effort in handling service requests that may span multiple services.
+* Testing of the interactions between services across the system.
+* Required coordination between multiple teams for operations that will span multiple services.
+* Complexity of deployment, management and monitoring of system.
 
 ## System decomposition into services
 
@@ -48,17 +48,17 @@ There are two basic messaging patterns that services can use to communicate with
 
 This is where a service can call another service via HTTP requests/responses.  This option is a synchronous messaging pattern because the caller waits for a response from the receiver.  While other synchronous communication methods are available, for my purposes this is always HTTP.
 
-> #### Advantages
-> 
-> * Simpler method and well understood
-> 
-> #### Disadvantages
-> 
-> * Adds additional latency
-> * Additional code for handling retries or circuit breaking
-> * Can create unnecessary dependencies on transactional completeness
-> * Tighter service coupling
-> * Possible multiple requests for multiple interested services
+#### Advantages
+
+* Simpler method and well understood
+
+#### Disadvantages
+
+* Adds additional latency
+* Additional code for handling retries or circuit breaking
+* Can create unnecessary dependencies on transactional completeness
+* Tighter service coupling
+* Possible multiple requests for multiple interested services
 
 Synchronous communication should generally be avoided in handling of incoming HTTP requests unless caller needs to know the disposition of the operation or needs information as a result of the operation completing.
 
@@ -66,18 +66,18 @@ Synchronous communication should generally be avoided in handling of incoming HT
 
 This is where a service will publish an AMQP message without waiting for a response, and one or more services process the message asynchronously.  While there are many choices in message brokers and messaging protocols, for my purposes AMPQ is the protocol of choice.  AMQP (Advanced Message Queuing Protocol) is a standard that allows for message broker selection without vendor lock in.
 
-> #### Advantages
-> 
-> * Expected eventual consistency and handling.
-> * Simpler scenario for handling retries and service outages.
-> * Looser service coupling, publisher does not know if or how many consumers there are, nor knows about their intent of consuming the message.
-> * Resilience of handling, consumer can consume when service is available and service can be scaled to expedite consumption backlog
-> * Initial request responsiveness, by means of not having the caller wait for all parts of the operation to complete.
-> 
-> #### Disadvantages
-> 
-> * More complex, less understood, additional dependency on message broker.
-> * Throughput can be the cost of resilience.  
-> * Queued workload may cause delays to current workloads.
+#### Advantages
+
+* Expected eventual consistency and handling.
+* Simpler scenario for handling retries and service outages.
+* Looser service coupling, publisher does not know if or how many consumers there are, nor knows about their intent of consuming the message.
+* Resilience of handling, consumer can consume when service is available and service can be scaled to expedite consumption backlog
+* Initial request responsiveness, by means of not having the caller wait for all parts of the operation to complete.
+
+#### Disadvantages
+
+* More complex, less understood, additional dependency on message broker.
+* Throughput can be the cost of resilience.  
+* Queued workload may cause delays to current workloads.
 
 Asynchronous messaging should be used for as many service to service communications as possible, especially when involving 3rd party services beyond the control of the enterprise system.
