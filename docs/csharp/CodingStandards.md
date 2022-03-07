@@ -24,7 +24,7 @@ Initialize all static or instance variables in line at time of declaration
 
 ## Line splits
 
-* At around 132 columns a long line should be broken
+* At around 132 columns, a long line should be broken
 * The second and subsequent lines after a break should be indented two indents from the start of the first line
 * Do not break lines unless line length is extended
 

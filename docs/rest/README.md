@@ -13,6 +13,7 @@ The purpose of this document is to provide direction for keeping REST API implem
 * [Errors](Errors.md)
 * [HTTP Status Codes](HTTPStatusCodes.md)
 * [Health Check](HealthCheck.md)
+* [OpenAPI](OpenAPI.md)
 
 ## TODO
 
@@ -26,8 +27,6 @@ The purpose of this document is to provide direction for keeping REST API implem
 * [HATEOAS](Hateoas.md)
 * [Date handling](DateTime.md)
 * [Logging](Logging.md)
-* [OpenAPI](OpenAPI.md)
-* [Http Status Codes](HTTP-STATUS-CODES.md)
 * [Query-by-POST](Query-by-POST.md)
 * [Search](Search.md)
 * [Serialization](Serialization.md)

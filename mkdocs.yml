@@ -1,28 +1,108 @@
 site_name: Cortside Guidelines
 site_description: General guidelines by Cortside
 site_url: https://www.cortside.com
-
+site_author: Cort Schaefer
 repo_url: https://github.com/cortside/guidelines
 edit_uri: edit/develop/docs
 
-theme: readthedocs
+theme: material
+#theme: readthedocs
 
-# Build PDF & ePub
-formats:
-  - epub
-  - pdf
- 
 nav:
-- Architecture: architecture/README.md
-- RESTful API Design: rest/README.md
-- C#: csharp/README.md
-- SQL: sql/README.md
-- Git: git/README.md
-- Template projects: template/README.md
-- Scrum: scrum/README.md
+  - 'Architecture':
+    - 'Microservices': architecture/Microservices.md
+    - 'Messaging': architecture/Messaging.md
+    - 'REST': architecture/REST.md
+    - 'Security': architecture/Security.md
+    - 'Observability': architecture/Observability.md
+    - 'Token Exchange': architecture/TokenExchange.md
+    - 'References': architecture/References.md
+  - RESTful API Design:
+    - 'TL;DR Best Practices': rest/BestPractices.md
+    - rest/Resource.md
+    - rest/Representation.md
+    - rest/Errors.md
+    - rest/HTTPStatusCodes.md
+    - rest/HealthCheck.md
+    - rest/OpenAPI.md    
+#  - C#:
+#    - csharp/CodingStandards.md    
+  - SQL: sql/README.md
+  - Git: git/README.md
+#  - Template projects: template/README.md
+#  - Scrum: scrum/README.md
 
 # ci for docs
 # https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/
 
-# PDF for mkdocs
-# https://github.com/orzih/mkdocs-with-pdf
+plugins:
+    - with-pdf:
+        #author: Cort Schaefer
+        copyright: Copyright (c) 2022 Cortside Consulting and Contributors
+        #
+        #cover: false
+        #back_cover: true
+        #cover_title: TITLE TEXT
+        cover_subtitle: The First Book of Cort
+        #custom_template_path: TEMPLATES PATH
+        #
+        #toc_title: TOC TITLE TEXT
+        #heading_shift: false
+        #toc_level: 3
+        #ordered_chapter_level: 2
+        #excludes_children:
+        #    - 'release-notes/:upgrading'
+        #    - 'release-notes/:changelog'
+        #
+        #exclude_pages:
+        #    - 'bugs/'
+        #    - 'appendix/contribute/'
+        #convert_iframe:
+        #    - src: IFRAME SRC
+        #      img: POSTER IMAGE URL
+        #      text: ALTERNATE TEXT
+        #    - src: ...
+        #two_columns_level: 3
+        #
+        #render_js: true
+        #headless_chrome_path: headless-chromium
+        #
+        output_path: guidelines.pdf
+        #enabled_if_env: ENABLE_PDF_EXPORT
+        #
+        #debug_html: true
+        #show_anchors: true
+        #verbose: true
+
+markdown_extensions:
+  - toc
+  - extra
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - toc:
+      permalink: 
+      toc_depth: 3
+  - codehilite
+  - pymdownx.tabbed
+  - pymdownx.superfences
+  - markdown_include.include:
+      base_path: docs
+  - admonition
+  - footnotes
+  - def_list
+  - abbr
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.keys
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - meta
+  - smarty
+  - attr_list

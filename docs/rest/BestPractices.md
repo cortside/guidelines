@@ -53,7 +53,7 @@ Since REST APIs depend upon HTTP standards, each request’s status is used to c
 * 403: Forbidden
 * 404: Not found
 
-A larger applicable list of statuses commonly used HTTP statuses can be found [here](HTTP-STATUS-CODES.md).
+A larger applicable list of statuses commonly used HTTP statuses can be found [here](HTTPStatusCodes.md).
 
 ## Updates and creation should return a resource representation
 

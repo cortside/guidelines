@@ -285,7 +285,7 @@ Return appropriate HTTP status codes with each response.  HTTP Status Codes are 
 * 4xx Client Error
 * 5xx Server Error
 
-See the follow table for specifics of which HTTP status code for the appropriate situations, [HTTP Status Codes](HTTP-STATUS-CODES.md).
+See the follow table for specifics of which HTTP status code for the appropriate situations, [HTTP Status Codes](HTTPStatusCodes.md).
 
 ### Validate errors
 
