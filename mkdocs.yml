@@ -66,6 +66,16 @@ nav:
 #    - csharp/CodingStandards.md    
   - SQL: sql/README.md
   - Git: git/README.md
+  - 'Service Diagrams':
+    - cortside/application-api/README.md
+    - cortside/communication-api/CommunicationServiceDiagram.md
+    - cortside/decisionengine-api/CreditEngine-Decomposition.md
+    - cortside/document-api/DocumentServiceDiagram.md
+    - cortside/fundingmanagement-api/FundingManagementServiceDiagram.md
+    - cortside/loan-api/LoanServiceDiagram.md
+    - cortside/partnerportal-api/PartnerPortalServiceDiagram.md
+    - cortside/prequalification-api/PrequalificationServiceDiagram.md
+    - cortside/user-api/UserServiceDiagram.md
 #  - Template projects: template/README.md
 #  - Scrum: scrum/README.md
 
@@ -88,12 +98,12 @@ plugins:
 #        author: Monsieur Silvestre
 #        toc_title: ToC
     - with-pdf:
-        #author: Cort Schaefer
-        copyright: Copyright (c) 2022 Cortside Consulting and Contributors
+        author: Cort Schaefer
+        copyright: Copyright (c) 2022 CortsideUSA
         #
         #cover: false
         #back_cover: true
-        #cover_title: TITLE TEXT
+        cover_title: CortsideUSA Guidelines
         cover_subtitle: The First Book of Cort
         #custom_template_path: TEMPLATES PATH
         #

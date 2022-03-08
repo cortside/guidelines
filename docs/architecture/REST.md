@@ -11,10 +11,10 @@ Here are some of the main design principles of RESTful APIs using HTTP:
     * the nouns that the HTTP verbs act on
 * Resource identifier
     * the URI that uniquely identifies a given resource
-        * i.e. https://api.domain.com/api/v1/users/61d78b92-3e20-4c7c-bdb8-8748b20c4cb7
+        * i.e. `https://api.domain.com/api/v1/users/61d78b92-3e20-4c7c-bdb8-8748b20c4cb7`
 * Representation
-    * the data format for a given resource through which resources are manipulated
-        * example of a GET request for the user resource noted above
+    * The data format for a given resource through which resources are manipulated
+        * An example of a GET request for the user resource noted above
 
             ```json
             {
