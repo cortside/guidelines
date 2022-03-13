@@ -66,18 +66,18 @@ nav:
 #    - csharp/CodingStandards.md    
   - SQL: sql/README.md
   - Git: git/README.md
+  - Template projects: template/TemplateApi.md
+#  - Scrum: scrum/user-stories.md
   - 'Service Diagrams':
-    - cortside/application-api/README.md
-    - cortside/communication-api/CommunicationServiceDiagram.md
+    - cortside/application-api/ServiceDiagram.md
+    - cortside/communication-api/ServiceDiagram.md
     - cortside/decisionengine-api/CreditEngine-Decomposition.md
-    - cortside/document-api/DocumentServiceDiagram.md
-    - cortside/fundingmanagement-api/FundingManagementServiceDiagram.md
-    - cortside/loan-api/LoanServiceDiagram.md
-    - cortside/partnerportal-api/PartnerPortalServiceDiagram.md
+    - cortside/document-api/ServiceDiagram.md
+    - cortside/fundingmanagement-api/ServiceDiagram.md
+    - cortside/loan-api/ServiceDiagram.md
+    - cortside/partnerportal-api/ServiceDiagram.md
     - cortside/prequalification-api/PrequalificationServiceDiagram.md
-    - cortside/user-api/UserServiceDiagram.md
-#  - Template projects: template/README.md
-#  - Scrum: scrum/README.md
+    - cortside/user-api/ServiceDiagram.md
 
 # ci for docs
 # https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/
@@ -106,6 +106,7 @@ plugins:
         cover_title: CortsideUSA Guidelines
         cover_subtitle: The First Book of Cort
         #custom_template_path: TEMPLATES PATH
+        cover_logo: grumpy.png
         #
         #toc_title: TOC TITLE TEXT
         #heading_shift: false
