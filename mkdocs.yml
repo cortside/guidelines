@@ -103,8 +103,10 @@ plugins:
         #
         #cover: false
         #back_cover: true
-        cover_title: CortsideUSA Guidelines
-        cover_subtitle: The First Book of Cort
+        #cover_title: CortsideUSA Guidelines
+        #cover_subtitle: The First Book of Cort
+        cover_title: Architecture Guidelines
+        cover_subtitle: Cortside
         #custom_template_path: TEMPLATES PATH
         cover_logo: grumpy.png
         #
