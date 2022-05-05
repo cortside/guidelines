@@ -14,6 +14,10 @@ It enables an application to maintain data consistency across multiple services 
 
 A confirmation event is not required for a saga, this could have just as well been the same message consumed by the Inventory service that would then decrement available item inventory.
 
+## Message contents
+
+Most message brokers do not guarantee only once delivery, nor do they guarantee receipt order, so care should be taken with the contents and the reliance on the contents of a message. For example, if order can not be guaranteed and sequencing is not something that can be validated, relying on content in a message may not be correct for applying state changes to an entity.
+
 ## Transactional Outbox Pattern
 
 It is common for the publication of a message to happen along with data changes that may be committed to the service's data store.  It is often not possible, viable or desirable to have a message broker participate in a distributed transaction along with the database.  In order to have an atomic transaction that either publishes or rolls back a message publication based on the entire database transaction the Transaction Outbox Pattern is used.
