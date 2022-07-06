@@ -108,29 +108,68 @@ JSON output representation for something like this would look like:
 {
   "errors": [
     {
-      "type": "string",
-      "message" : "Something bad happened",
-      "description" : "More details about the error here"
+      "type": "BadError",
+      "message" : "Something bad happened"
     }
   ]
 }
 ```
 
-Validation errors for PUT, PATCH and POST requests will need a field breakdown. This is best modeled by using a fixed top-level error code for validation failures and providing the detailed errors in an additional errors field, like so:
+Validation errors for PUT, PATCH and POST requests will need a field/property breakdown. This is best modeled by populating a value for the offending property, like so:
 
 ```js
 {
-  "type": "string",
-  "message" : "Validation Failed",
-  "fields" : [
+  "errors": [
     {
-      "field" : "firstName",
+      "type": "ValidationError",
+      "property" : "firstName",
       "message" : "First name cannot have fancy characters"
     },
     {
-       "field" : "password",
+       "type": "PasswordValidationError", 
+       "property" : "password",
        "message" : "Password cannot be blank"
     }
   ]
+}
+```
+
+In the case of unhandled exceptions, it's possible to expose the exception details for non-production environments, like this:
+
+```js
+{
+    "errors": [
+        {
+            "type": "InternalServerErrorResponseException",
+            "message": "Unhandled exception",
+            "exception": {
+                "ClassName": "Cortside.Common.Messages.MessageExceptions.InternalServerErrorResponseException",
+                "Message": "Unhandled exception",
+                "Data": null,
+                "InnerException": {
+                    "ClassName": "Cortside.Common.Messages.MessageListException",
+                    "Message": "One or more error occurred.",
+                    "Data": null,
+                    "InnerException": null,
+                    "HelpURL": null,
+                    "StackTraceString": "   at Cortside.Common.Messages.MessageList.ThrowIfAny[T]()\r\n   at Acme.ShoppingCart.Domain.Entities.Customer.Update(String firstName, String lastName, String email) in C:\\Work\\cortside\\coeus\\shoppingcart-api\\src\\Acme.ShoppingCart.Domain\\Entities\\Customer.cs:line 36\r\n   at Acme.ShoppingCart.Domain.Entities.Customer..ctor(String firstName, String lastName, String email) in C:\\Work\\cortside\\coeus\\shoppingcart-api\\src\\Acme.ShoppingCart.Domain\\Entities\\Customer.cs:line 13\r\n   at Acme.ShoppingCart.DomainService.CustomerService.CreateCustomerAsync(CustomerDto dto) in C:\\Work\\cortside\\coeus\\shoppingcart-api\\src\\Acme.ShoppingCart.DomainService\\CustomerService.cs:line 26\r\n   at Acme.ShoppingCart.Facade.CustomerFacade.CreateCustomerAsync(CustomerDto dto) in C:\\Work\\cortside\\coeus\\shoppingcart-api\\src\\Acme.ShoppingCart.Facade\\CustomerFacade.cs:line 23\r\n   at Acme.ShoppingCart.WebApi.Controllers.CustomerController.CreateCustomerAsync(CreateCustomerModel input) in C:\\Work\\cortside\\coeus\\shoppingcart-api\\src\\Acme.ShoppingCart.WebApi\\Controllers\\CustomerController.cs:line 125\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)",
+                    "RemoteStackTraceString": null,
+                    "RemoteStackIndex": 0,
+                    "ExceptionMethod": null,
+                    "HResult": -2146233088,
+                    "Source": "Cortside.Common.Messages",
+                    "WatsonBuckets": null
+                },
+                "HelpURL": null,
+                "StackTraceString": null,
+                "RemoteStackTraceString": null,
+                "RemoteStackIndex": 0,
+                "ExceptionMethod": null,
+                "HResult": -2146233088,
+                "Source": null,
+                "WatsonBuckets": null
+            }
+        }
+    ]
 }
 ```
