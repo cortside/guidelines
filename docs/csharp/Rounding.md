@@ -2,9 +2,17 @@
 
 While it might seem obvious how to round, there are actually multiple methods to handle rounding.  The default rounding method without specifying a specific method in C# using Math.Round is "banker's" rounding, or rounding to the nearest even.  This may not result in the rounding that most might assume if not particularly aware of different rounding methods and reasons for each.
 
-For better understanding of the differing methods, see here:
+For better understanding of the differing methods, see the definitions defined by the [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754#Roundings_to_nearest) standard.
 
-* <https://en.wikipedia.org/wiki/IEEE_754#Roundings_to_nearest>
+Math.Round supports the following [MidPointRounding](https://docs.microsoft.com/en-us/dotnet/api/system.midpointrounding?view=net-6.0) values:
+
+| Value | Description |
+|-----|------|
+| AwayFromZero | The strategy of rounding to the nearest number, and when a number is halfway between two others, it's rounded toward the nearest number that's away from zero. |
+| ToEven | The strategy of rounding to the nearest number, and when a number is halfway between two others, it's rounded toward the nearest even number. |
+| ToNegativeInfinity | The strategy of downwards-directed rounding, with the result closest to and no greater than the infinitely precise result. |
+| ToPositiveInfinity | The strategy of upwards-directed rounding, with the result closest to and no less than the infinitely precise result. |
+| ToZero | The strategy of directed rounding toward zero, with the result closest to and no greater in magnitude than the infinitely precise result. |
 
 Rounding away from zero is the most widely known form of rounding, while rounding to nearest even is the standard in financial and statistical operations. It conforms to IEEE Standard 754, section 4.
 
@@ -12,19 +20,19 @@ To illustrate the difference, the following code can be run using [.NET Fiddle](
 
 ```csharp
 using System;
-					
+
 public class Program
 {
-	public static void Main()
-	{
-		// default "banker's rounding" (rounding to nearest even)
-		Console.WriteLine(Math.Round(0.50005, 4));
-		Console.WriteLine(Math.Round(1.50005, 4));
+    public static void Main()
+    {
+        // default "banker's rounding" (rounding to nearest even)
+        Console.WriteLine(Math.Round(0.50005, 4));
+        Console.WriteLine(Math.Round(1.50005, 4));
 
-		// specifying specific midpoint rounding method, away from zero
-		Console.WriteLine(Math.Round(0.50005, 4, MidpointRounding.AwayFromZero));
-		Console.WriteLine(Math.Round(1.50005, 4, MidpointRounding.AwayFromZero));
-	}
+        // specifying specific midpoint rounding method, away from zero
+        Console.WriteLine(Math.Round(0.50005, 4, MidpointRounding.AwayFromZero));
+        Console.WriteLine(Math.Round(1.50005, 4, MidpointRounding.AwayFromZero));
+    }
 }
 ```
 
