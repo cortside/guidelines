@@ -19,9 +19,6 @@ should not have any compile errors
 dotnet test src
 
 update nuget packages without locking current major version
-if project uses cortside.common.restsharpclient
-	dotnet outdated ./src --pre-release Never --upgrade --exclude restsharp
-otherwise
 	dotnet outdated ./src --pre-release Never --upgrade
 
 validate app insights config:
