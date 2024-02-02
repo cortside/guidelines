@@ -8,6 +8,7 @@ While we all deal with dates and times on a regular basis, they require some spe
 
 Examples:
 
+```json
 {
   // ...
   "createdDate": "2022-01-16T17:52:52.848Z",
@@ -17,6 +18,7 @@ Examples:
   "birthdate": "2000-01-07",
   // ...
 }
+```
 
 The consumer is responsible for doing any time zone conversion that may be needed.
 
