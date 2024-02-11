@@ -104,7 +104,7 @@ The API should always return sensible HTTP status codes. API errors typically br
 
 JSON output representation for something like this would look like:
 
-```js
+```json
 {
   "errors": [
     {
@@ -117,7 +117,7 @@ JSON output representation for something like this would look like:
 
 Validation errors for PUT, PATCH and POST requests will need a field/property breakdown. This is best modeled by populating a value for the offending property, like so:
 
-```js
+```json
 {
   "errors": [
     {
